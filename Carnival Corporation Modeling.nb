@@ -1,0 +1,3414 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    164216,       3406]
+NotebookOptionsPosition[    161861,       3362]
+NotebookOutlinePosition[    162321,       3380]
+CellTagsIndexPosition[    162278,       3377]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Carnival Corporation Modeling", "Title",
+ CellChangeTimes->{{3.802299344537169*^9, 
+  3.802299370237121*^9}},ExpressionUUID->"9d077040-8f7c-4a47-be32-\
+7a126669b326"],
+
+Cell["Megan Mou, Jonathan Xu, Andrew Zhen, Daniel Wei", "Subtitle",
+ CellChangeTimes->{{3.8022993729233923`*^9, 
+  3.802299391124909*^9}},ExpressionUUID->"51129d85-cfb5-432e-9a4a-\
+ce36ed1d5a72"],
+
+Cell[CellGroupData[{
+
+Cell["Data Source", "Section",
+ CellChangeTimes->{{3.802299421426511*^9, 
+  3.802299423057015*^9}},ExpressionUUID->"f78a1339-3d38-4e60-bacc-\
+41683d6a25ae"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"data", " ", "=", " ", 
+  RowBox[{"CompanyData", "[", 
+   RowBox[{
+   "\"\<CarnivalCorporation::3jd9t\>\"", ",", " ", "\"\<Dataset\>\""}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.8027320157498817`*^9, 3.802732016896147*^9}, {
+   3.802732052830852*^9, 3.802732060902528*^9}, {3.802732137800972*^9, 
+   3.802732140027027*^9}, 3.802732458756876*^9, 3.8027331898216553`*^9, {
+   3.802733309353656*^9, 3.802733310223143*^9}},
+ CellLabel->"In[84]:=",ExpressionUUID->"85eb023c-1990-4218-b455-20c0cc6485a8"],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[
+   DynamicModuleBox[{TypeSystem`NestedGrid`PackagePrivate`$state$$ = 
+    Association[
+    "InitialData" -> 
+     Association[
+      EntityProperty["Company", "AccountsPayable"] -> 
+       Quantity[7.8675*^8, "USDollars"], 
+       EntityProperty["Company", "AccountsReceivable"] -> 
+       Quantity[4.2375*^8, "USDollars"], 
+       EntityProperty["Company", "AccumulatedDepreciation"] -> 
+       Quantity[-1.8748865*^9, "USDollars"], 
+       EntityProperty["Company", "AdditionalPaidInCapital"] -> 
+       Quantity[8.80475*^9, "USDollars"], 
+       EntityProperty["Company", "Address"] -> {
+        "3655 North West 87th Avenue"}, 
+       EntityProperty["Company", "Amortization"] -> Missing["NotAvailable"], 
+       EntityProperty["Company", "AssetsTurnover"] -> 0.139057, 
+       EntityProperty["Company", "BeginningCashPosition"] -> 
+       Quantity[6.65*^8, "USDollars"], 
+       EntityProperty["Company", "CapitalExpenditure"] -> 
+       Quantity[-4.626*^9, "USDollars"/"Years"], 
+       EntityProperty["Company", "Cash"] -> Missing["NotAvailable"], 
+       EntityProperty["Company", "CashAndCashEquivalents"] -> 
+       Quantity[1.05675*^9, "USDollars"], 
+       EntityProperty["Company", "CashDividendsPaid"] -> 
+       Quantity[-1.383*^9, "USDollars"/"Years"], 
+       EntityProperty["Company", "CashEquivalents"] -> 
+       Missing["NotAvailable"], 
+       EntityProperty["Company", "CashFlowFromContinuingFinancingActivities"] -> 
+       Quantity[-1.76*^8, "USDollars"/"Years"], 
+       EntityProperty["Company", "CashFlowFromContinuingInvestingActivities"] -> 
+       Quantity[-4.379*^9, "USDollars"/"Years"], 
+       EntityProperty["Company", "CashFlowFromContinuingOperatingActivities"] -> 
+       Quantity[5.278*^9, "USDollars"/"Years"], 
+       EntityProperty["Company", "CashFlowFromDiscontinuedOperation"] -> 
+       Missing["NotAvailable"], 
+       EntityProperty["Company", "CashFromDiscontinuedFinancingActivities"] -> 
+       Missing["NotAvailable"], 
+       EntityProperty["Company", "CashFromDiscontinuedInvestingActivities"] -> 
+       Missing["NotAvailable"], 
+       EntityProperty["Company", "ChangeInAccruedExpense"] -> 
+       Quantity[-1.28*^8, "USDollars"/"Years"], 
+       EntityProperty["Company", "ChangeInInterestPayable"] -> 
+       Missing["NotAvailable"], 
+       EntityProperty["Company", "ChangeInInventory"] -> 
+       Quantity[5.7*^7, "USDollars"/"Years"], 
+       EntityProperty["Company", "ChangeInPayable"] -> 
+       Quantity[1.17*^8, "USDollars"/"Years"], 
+       EntityProperty["Company", "ChangeInTaxPayable"] -> 
+       Missing["NotAvailable"], 
+       EntityProperty["Company", "ChangeInWorkingCapital"] -> 
+       Quantity[9.9*^7, "USDollars"/"Years"], 
+       EntityProperty["Company", "ChangesInCash"] -> 
+       Quantity[7.2*^8, "USDollars"/"Years"], 
+       EntityProperty["Company", "ChangesInReceivables"] -> 
+       Missing["NotAvailable"], EntityProperty["Company", "City"] -> 
+       Entity["City", {"Miami", "Florida", "UnitedStates"}], 
+       EntityProperty["Company", "CommonShares"] -> {
+         Entity["Financial", "NYSE:CCL"], 
+         Entity["Financial", "F:CVC1"]}, 
+       EntityProperty["Company", "CommonStock"] -> 
+       Quantity[3.6525*^8, "USDollars"], 
+       EntityProperty["Company", "CommonStockIssuance"] -> 
+       Quantity[0., "USDollars"/"Years"], 
+       EntityProperty["Company", "CommonStockPayments"] -> 
+       Quantity[-3.41*^8, "USDollars"/"Years"], 
+       EntityProperty["Company", "Coordinates"] -> {25.807276, -80.335715}, 
+       EntityProperty["Company", "CorporateStructure"] -> "Corporation", 
+       EntityProperty["Company", "CostOfRevenue"] -> 
+       Quantity[1.329*^10, "USDollars"/"Years"], 
+       EntityProperty["Company", "CurrentAccruedExpenses"] -> 
+       Quantity[1.739*^9, "USDollars"], 
+       EntityProperty["Company", "CurrentAssets"] -> 
+       Quantity[2.62275*^9, "USDollars"], 
+       EntityProperty["Company", "CurrentDebt"] -> 
+       Quantity[2.2415*^9, "USDollars"], 
+       EntityProperty["Company", "CurrentLiabilities"] -> 
+       Quantity[9.788*^9, "USDollars"], 
+       EntityProperty["Company", "CurrentNotesPayable"] -> 
+       Missing["NotAvailable"], EntityProperty["Company", "CurrentRatio"] -> 
+       0.269224, EntityProperty["Company", "DeferredAssets"] -> 
+       Missing["NotAvailable"], EntityProperty["Company", "DeferredCosts"] -> 
+       Missing["NotAvailable"], 
+       EntityProperty["Company", "DeferredTaxAssets"] -> 
+       Missing["NotAvailable"], EntityProperty["Company", "DefunctDate"] -> 
+       Missing["NotApplicable"], EntityProperty["Company", "Depreciation"] -> 
+       Quantity[1.226*^9, "USDollars"/"Years"], 
+       EntityProperty["Company", "DepreciationAmortizationDepletion"] -> 
+       Quantity[2.213*^9, "USDollars"/"Years"], 
+       EntityProperty["Company", "DepreciationAndAmortization"] -> 
+       Quantity[2.213*^9, "USDollars"/"Years"], 
+       EntityProperty["Company", "EBIT"] -> 
+       Quantity[2.162*^9, "USDollars"/"Years"], 
+       EntityProperty["Company", "EBITDA"] -> 
+       Quantity[4.376*^9, "USDollars"/"Years"], 
+       EntityProperty["Company", "Employees"] -> Quantity[106000, "People"], 
+       EntityProperty["Company", "EndCashPosition"] -> 
+       Quantity[1.368*^9, "USDollars"], 
+       EntityProperty["Company", "EntityClasses"] -> {
+         EntityClass[
+         "Company", {"City", {"Doral", "Florida", "UnitedStates"}}], 
+         EntityClass[
+         "Company", {"AdministrativeDivision", {"Florida", "UnitedStates"}}], 
+         
+         EntityClass["Company", {"Country", "UnitedStates"}], 
+         EntityClass[
+         "Company", {
+          "MetropolitanArea", 
+           "MiamiFortLauderdalePompanoBeachFLUnitedStatesMetro"}], 
+         EntityClass["Company", {"PostalCode", {"UnitedStates", "33178"}}]}, 
+       EntityProperty["Company", "EquityInvestments"] -> 
+       Missing["NotAvailable"], 
+       EntityProperty["Company", "FinancialHealthGrade"] -> "D", 
+       EntityProperty["Company", "FinancialLeverage"] -> 1.932606, 
+       EntityProperty["Company", "FinancingCashFlow"] -> 
+       Quantity[-1.78*^8, "USDollars"/"Years"], 
+       EntityProperty["Company", "FormerNames"] -> Missing["NotAvailable"], 
+       EntityProperty["Company", "FoundingDate"] -> 
+       DateObject[{1873}, "Year", "Gregorian", -4.], 
+       EntityProperty["Company", "FreeCashFlow"] -> 
+       Quantity[6.49*^8, "USDollars"/"Years"], 
+       EntityProperty["Company", "GeneralAndAdministrativeExpense"] -> 
+       Missing["NotAvailable"], EntityProperty["Company", "Goodwill"] -> 
+       Quantity[2.72025*^9, "USDollars"], 
+       EntityProperty["Company", "GoodwillAndOtherIntangibleAssets"] -> 
+       Quantity[3.8915*^9, "USDollars"], 
+       EntityProperty["Company", "GrossLoan"] -> Missing["NotAvailable"], 
+       EntityProperty["Company", "GrossMargin"] -> 
+       Quantity[49.3146, "Percent"], EntityProperty["Company", "GrossPPE"] -> 
+       Quantity[2.8704*^10, "USDollars"], 
+       EntityProperty["Company", "GrossProfit"] -> 
+       Quantity[7.651*^9, "USDollars"/"Years"], 
+       EntityProperty["Company", "GrowthGrade"] -> "B", 
+       EntityProperty["Company", "HeldToMaturitySecurities"] -> 
+       Missing["NotAvailable"], EntityProperty["Company", "Image"] -> 
+       Image[CompressedData["
+1:eJztnW9oVtcdx0v2Zi98MchLoUU6aF/4TphBxXbFKY6A0jC6LcNVm6yOiAPN
+kCq1mXs2KY3a1bBuLJug2RD3VMTonGBatkRta5ZprXRtSNUt6KbJgo96ferk
+YZ97v4/Hm3Puc++N2F1H7o/Hh/vnnN/5/T+/3zknj7NW/eDZ79U98sgj67/I
+17MrN3x13bqVLzV9iZtvrF3//RfXtrYsXdve+mLruoZVX+DhAv79nH/+deX/
+DUZGLhQKheHh4awJyeE+AQ22ta0pFos3btzImpYc7gdGR0cbly3v7Oz03bDs
+ZU1ODlOGsbGxpqamRYsWvdDScunyFfs1Os3V+tBDd3d3XV0dehwYGPDvS/++
+dXH4+l8GvMM9N3Zvu3VwV67Ehxx6e3vr6+uXLl78xx0FtFbauXF8XdPVlmeu
+rlzIZ6zt6+gUJd65fPH2h+9/NtR/60+9Xt/+8Of2qXd4hd7vjP8ra26mI5DD
+MA/Onj175NX1UtzY6iUoznxKb3bwmdjSqturK+Zd+fZX9DFaHt/wrdLm569t
+bcMGcp/93wNKxAdP7duN94V1V1UZal0xj4uJX/zoal/vpyffHT05cP3tA+jL
+bVbq/mmuwUyAefC1LR3IH0W4GpzY+B1mxmPvnNq5fbc+PXsO/vPT87ePFcNK
+p6XvgzlkAeQzlBWoyddFOIquXoKOmOYGhz5549Vfbyv8ku/Xt3ZzgRLHJ67h
+jGENMlFmzco0BerBhU89PXL2HJlM2A19t9r/K4qOvXsOSH36SInHB94jZpa2
+tUvpuQYzBKZCqsKenh4Co+WGlauX0K+0ZjQof9zzm9+jXLSWR9HsoewVCgXq
+eioCZr1wCK3cLA0ODv745e2WBrnd0bnzo799QrlhNHhjb1eeyWQFVPTkM/gU
+gdT4IBESDQ4NnvnJ5tddDaJWXhkNXm79mp+L5pAR4E1MhW/tO1ANpMGHQg8N
+nh76IE6DN0umPf7LbdasTFNgKmxvb6e6v/P34fBUSFwdHR2lgnA1yFR47tzH
+fns1Dr7zlZkMgZqiubl5/B8Xw7koLolyD+0/ihuix7AGyWQuXb5y6+Cue+nr
+6iVe3/6s+Zi+0NfXR0Y6dKK/tPn5cGDEy0ZGLqC+cEGBQqnx/3P+Iz/zMbnr
+6iWlNzuy5mP6Ar6GDx49fMh7Y0PYDa9tbUOJpqjH+/j8bu+RK2dO8cqqH5k6
+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
+Rv4vr4HWcg==
+         "], "Byte", ColorSpace -> "RGB", Interleaving -> True, 
+         MetaInformation -> 
+         Association[
+          "Source" -> "http://www.brandsoftheworld.com/logo/carnival-0", 
+           "URL" -> 
+           "http://www.wolframcdn.com/waimage/hset037/9be/\
+9befba0a95218ec8d2bc9879a74dfd49_v001s.gif"]], 
+       EntityProperty["Company", "IncomeTaxPayable"] -> 
+       Missing["NotAvailable"], EntityProperty["Company", "Industry"] -> 
+       "Leisure", EntityProperty["Company", "InterestBearingDepositsAssets"] -> 
+       Missing["NotAvailable"], 
+       EntityProperty["Company", "InterestBearingDepositsLiabilities"] -> 
+       Missing["NotAvailable"], EntityProperty["Company", "InterestExpense"] -> 
+       Quantity[2.1*^8, "USDollars"/"Years"], 
+       EntityProperty["Company", "InterestExpenseNonOperating"] -> 
+       Quantity[2.1*^8, "USDollars"/"Years"], 
+       EntityProperty["Company", "InterestExpenseOperating"] -> 
+       Missing["NotAvailable"], EntityProperty["Company", "InterestIncome"] -> 
+       Quantity[2.5*^7, "USDollars"/"Years"], 
+       EntityProperty["Company", "InterestIncomeNonOperating"] -> 
+       Quantity[2.5*^7, "USDollars"/"Years"], 
+       EntityProperty["Company", "InterestIncomeOperating"] -> 
+       Missing["NotAvailable"], EntityProperty["Company", "InterestPayable"] -> 
+       Missing["NotAvailable"], EntityProperty["Company", "Inventory"] -> 
+       Quantity[4.625*^8, "USDollars"], 
+       EntityProperty["Company", "InventoryTurnover"] -> 7.330855, 
+       EntityProperty["Company", "InvestingCashFlow"] -> 
+       Quantity[-4.379*^9, "USDollars"/"Years"], 
+       EntityProperty["Company", "LongTermDebt"] -> 
+       Quantity[9.3465*^9, "USDollars"], 
+       EntityProperty["Company", "LongTermDebtIssuance"] -> 
+       Quantity[3.058*^9, "USDollars"/"Years"], 
+       EntityProperty["Company", "LongTermDebtPayments"] -> 
+       Quantity[-1.688*^9, "USDollars"/"Years"], 
+       EntityProperty["Company", "LongTermDebtTotalCapitalRatio"] -> 0.312677,
+        EntityProperty["Company", "LongTermInvestments"] -> 
+       Missing["NotAvailable"], EntityProperty["Company", "MetropolitanArea"] -> 
+       Entity["MetropolitanArea", 
+         "MiamiFortLauderdalePompanoBeachFLUnitedStatesMetro"], 
+       EntityProperty["Company", "MinorityInterest"] -> 
+       Quantity[4.204*^8, "USDollars"/"Years"], 
+       EntityProperty["Company", "MoneyMarketInvestments"] -> 
+       Missing["NotAvailable"], EntityProperty["Company", "Name"] -> 
+       "Carnival", EntityProperty["Company", "NetBusinessPurchaseAndSale"] -> 
+       Missing["NotAvailable"], EntityProperty["Company", "NetIncome"] -> 
+       Quantity[1.873*^9, "USDollars"/"Years"], 
+       EntityProperty["Company", "NetIncomeCommonStockholders"] -> 
+       Quantity[1.873*^9, "USDollars"/"Years"], 
+       EntityProperty["Company", "NetIncomeContinuousOperations"] -> 
+       Quantity[1.871*^9, "USDollars"/"Years"], 
+       EntityProperty["Company", "NetIncomeDiscontinuousOperations"] -> 
+       Quantity[-1.688*^8, "USDollars"/"Years"], 
+       EntityProperty["Company", "NetIncomeExtraordinary"] -> 
+       Missing["NotAvailable"], EntityProperty["Company", "NetIncomeGrowth"] -> 
+       Quantity[28.4424, "Percent"], 
+       EntityProperty["Company", "NetIntangiblesPurchaseAndSale"] -> 
+       Missing["NotAvailable"], 
+       EntityProperty["Company", "NetInterestIncome"] -> 
+       Quantity[-1.85*^8, "USDollars"/"Years"], 
+       EntityProperty["Company", "NetInvestmentIncome"] -> 
+       Missing["NotAvailable"], 
+       EntityProperty["Company", "NetInvestmentPurchaseAndSale"] -> 
+       Quantity[0., "USDollars"/"Years"], 
+       EntityProperty["Company", "NetLoan"] -> Missing["NotAvailable"], 
+       EntityProperty["Company", "NetMargin"] -> 
+       Quantity[-16.3048, "Percent"], 
+       EntityProperty["Company", "NetNonOperatingInterestIncomeExpense"] -> 
+       Quantity[-1.85*^8, "USDollars"/"Years"], 
+       EntityProperty["Company", "NetOperatingInterestIncomeExpense"] -> 
+       Missing["NotAvailable"], EntityProperty["Company", "NetPPE"] -> 
+       Quantity[3.772575*^10, "USDollars"], 
+       EntityProperty["Company", "NetPPEPurchaseAndSale"] -> 
+       Quantity[-4.374*^9, "USDollars"/"Years"], 
+       EntityProperty["Company", "NetTechnologyPurchaseAndSale"] -> 
+       Missing["NotAvailable"], 
+       EntityProperty["Company", "NonCurrentAccruedExpenses"] -> 
+       Missing["NotAvailable"], 
+       EntityProperty["Company", "NonCurrentNoteReceivables"] -> 
+       Missing["NotAvailable"], 
+       EntityProperty["Company", "NonInterestExpense"] -> 
+       Missing["NotAvailable"], 
+       EntityProperty["Company", "NonInterestIncome"] -> 
+       Missing["NotAvailable"], EntityProperty["Company", "NotesReceivable"] -> 
+       Missing["NotAvailable"], 
+       EntityProperty["Company", "OperatingCashFlow"] -> 
+       Quantity[5.275*^9, "USDollars"/"Years"], 
+       EntityProperty["Company", "OperatingExpense"] -> 
+       Quantity[4.742*^9, "USDollars"/"Years"], 
+       EntityProperty["Company", "OperatingIncome"] -> 
+       Quantity[2.909*^9, "USDollars"/"Years"], 
+       EntityProperty["Company", "OperatingIncomeGrowth"] -> 
+       Quantity[21.052599999999998`, "Percent"], 
+       EntityProperty["Company", "OperatingMargin"] -> 
+       Quantity[30.7402, "Percent"], 
+       EntityProperty["Company", "OperatingRevenue"] -> 
+       Quantity[2.0941*^10, "USDollars"/"Years"], 
+       EntityProperty["Company", "OtherFinancialInstruments"] -> 
+       Missing["NotAvailable"], 
+       EntityProperty["Company", "OtherIncomeExpense"] -> 
+       Quantity[-7.69*^8, "USDollars"/"Years"], 
+       EntityProperty["Company", "OtherIntangibleAssets"] -> 
+       Quantity[1.17125*^9, "USDollars"], 
+       EntityProperty["Company", "OtherShortTermInvestments"] -> 
+       Quantity[9.25*^7, "USDollars"], 
+       EntityProperty["Company", "OwnershipType"] -> "PubliclyTraded", 
+       EntityProperty["Company", "Position"] -> 
+       GeoPosition[{25.807276, -80.335715}], 
+       EntityProperty["Company", "PostalCode"] -> "33178-2428", 
+       EntityProperty["Company", "PredecessorCompanies"] -> 
+       Missing["NotAvailable"], EntityProperty["Company", "PreferredStock"] -> 
+       Missing["NotAvailable"], 
+       EntityProperty["Company", "PreferredStockDividends"] -> 
+       Missing["NotAvailable"], 
+       EntityProperty["Company", "PreferredStockIssuance"] -> 
+       Missing["NotAvailable"], 
+       EntityProperty["Company", "PreferredStockPayments"] -> 
+       Missing["NotAvailable"], EntityProperty["Company", "PretaxIncome"] -> 
+       Quantity[1.952*^9, "USDollars"/"Years"], 
+       EntityProperty["Company", "ProfitabilityGrade"] -> "C", 
+       EntityProperty["Company", "PurchaseOfBusiness"] -> 
+       Missing["NotAvailable"], 
+       EntityProperty["Company", "PurchaseOfEquitySecurities"] -> 
+       Missing["NotAvailable"], 
+       EntityProperty["Company", "PurchaseOfFixedMaturitySecurities"] -> 
+       Quantity[-5.39*^8, "USDollars"/"Years"], 
+       EntityProperty["Company", "PurchaseOfIntangibles"] -> 
+       Missing["NotAvailable"], 
+       EntityProperty["Company", "PurchaseOfInvestment"] -> 
+       Quantity[0., "USDollars"/"Years"], 
+       EntityProperty["Company", "PurchaseOfLongTermInvestments"] -> 
+       Missing["NotAvailable"], EntityProperty["Company", "PurchaseOfPPE"] -> 
+       Quantity[-4.626*^9, "USDollars"/"Years"], 
+       EntityProperty["Company", "PurchaseOfShortTermInvestments"] -> 
+       Quantity[-1.19*^7, "USDollars"/"Years"], 
+       EntityProperty["Company", "PurchaseOfTechnology"] -> 
+       Missing["NotAvailable"], 
+       EntityProperty["Company", "ResearchAndDevelopment"] -> 
+       Missing["NotAvailable"], EntityProperty["Company", "RetainedEarnings"] -> 
+       Quantity[2.59735*^10, "USDollars"], 
+       EntityProperty["Company", "RevenueGrowth"] -> 
+       Quantity[5.8205, "Percent"], 
+       EntityProperty["Company", "RevenuePerEmployee"] -> 
+       Quantity[197556.6037735849, "USDollars"/"Years"], 
+       EntityProperty["Company", "ROA"] -> Quantity[-1.6978, "Percent"], 
+       EntityProperty["Company", "ROE"] -> 
+       Quantity[-3.1456999999999997`, "Percent"], 
+       EntityProperty["Company", "SaleOfBusiness"] -> Missing["NotAvailable"],
+        EntityProperty["Company", "SaleOfIntangibles"] -> 
+       Missing["NotAvailable"], EntityProperty["Company", "SaleOfInvestment"] -> 
+       Quantity[1.1*^7, "USDollars"/"Years"], 
+       EntityProperty["Company", "SaleOfLongTermInvestments"] -> 
+       Missing["NotAvailable"], EntityProperty["Company", "SaleOfPPE"] -> 
+       Quantity[2.52*^8, "USDollars"/"Years"], 
+       EntityProperty["Company", "SaleOfShortTermInvestments"] -> 
+       Quantity[5.32006*^8, "USDollars"/"Years"], 
+       EntityProperty["Company", "SalesOfEquitySecurities"] -> 
+       Missing["NotAvailable"], 
+       EntityProperty["Company", "SalesOfFixedMaturitySecurities"] -> 
+       Quantity[7.83*^8, "USDollars"/"Years"], 
+       EntityProperty["Company", "SellingAndMarketingExpense"] -> 
+       Missing["NotAvailable"], 
+       EntityProperty["Company", "SellingGeneralAndAdministration"] -> 
+       Quantity[2.529*^9, "USDollars"/"Years"], 
+       EntityProperty["Company", "ShortTermDebtIssuance"] -> 
+       Quantity[1.034*^9, "USDollars"/"Years"], 
+       EntityProperty["Company", "ShortTermDebtPayments"] -> 
+       Quantity[-2.88*^8, "USDollars"/"Years"], 
+       EntityProperty["Company", "Status"] -> "Active", 
+       EntityProperty["Company", "StockholdersEquity"] -> 
+       Quantity[2.47645*^10, "USDollars"], 
+       EntityProperty["Company", "SuccessorCompanies"] -> 
+       Missing["NotAvailable"], EntityProperty["Company", "TaxProvision"] -> 
+       Quantity[8.1*^7, "USDollars"/"Years"], 
+       EntityProperty["Company", "TotalAssets"] -> 
+       Quantity[4.51285*^10, "USDollars"], 
+       EntityProperty["Company", "TotalDebt"] -> 
+       Quantity[1.1958*^10, "USDollars"], 
+       EntityProperty["Company", "TotalDeposits"] -> Missing["NotAvailable"], 
+       EntityProperty["Company", "TotalExpenses"] -> 
+       Quantity[1.8032*^10, "USDollars"/"Years"], 
+       EntityProperty["Company", "TotalInvestments"] -> 
+       Missing["NotAvailable"], EntityProperty["Company", "TotalLiabilities"] -> 
+       Quantity[1.689475*^10, "USDollars"], 
+       EntityProperty["Company", "TotalNonCurrentAssets"] -> 
+       Quantity[4.2506*^10, "USDollars"], 
+       EntityProperty["Company", "TotalNonCurrentLiabilities"] -> 
+       Quantity[8.22525*^9, "USDollars"], 
+       EntityProperty["Company", "TotalRevenue"] -> 
+       Quantity[2.0941*^10, "USDollars"/"Years"], 
+       EntityProperty["Company", "TotalTaxPayable"] -> 
+       Missing["NotAvailable"], 
+       EntityProperty["Company", "TradingLiabilities"] -> 
+       Missing["NotAvailable"], 
+       EntityProperty["Company", "TradingSecurities"] -> 
+       Missing["NotAvailable"], EntityProperty["Company", "TreasuryStock"] -> 
+       Quantity[8.29075*^9, "USDollars"], 
+       EntityProperty["Company", "UnearnedIncome"] -> Missing["NotAvailable"],
+        EntityProperty["Company", "Website"] -> "http://www.carnivalcorp.com",
+        EntityProperty["Company", "WorkingCapital"] -> 
+       Quantity[-7.16525*^9, "USDollars"]], "InitialShape" -> 
+     TypeSystem`PackageScope`Limited[
+       TypeSystem`PackageScope`ColumnShape[
+        TypeSystem`PackageScope`KeyValueShape[
+         TypeSystem`PackageScope`UnknownShape[True], 
+         TypeSystem`PackageScope`UnknownShape[False]]], 20, 
+       DirectedInfinity[1], {}], "InitialType" -> 
+     TypeSystem`Assoc[TypeSystem`AnyType, TypeSystem`AnyType, 183], "Meta" -> 
+     Association["ID" -> 144689063463980], "RowTarget" -> 20, "ColumnTarget" -> 
+     10, "Shape" -> TypeSystem`PackageScope`Limited[
+       TypeSystem`PackageScope`ColumnShape[
+        TypeSystem`PackageScope`KeyValueShape[
+         TypeSystem`PackageScope`UnknownShape[True], 
+         TypeSystem`PackageScope`UnknownShape[False]]], 20, 
+       DirectedInfinity[1], {}], "Type" -> 
+     TypeSystem`Assoc[TypeSystem`AnyType, TypeSystem`AnyType, 183], 
+     "Path" -> {}, "BaseIndices" -> {}, "DisplayedRowCount" -> 20, 
+     "DisplayedColumnCount" -> 1, "DataRowCount" -> 183, "DataColumnCount" -> 
+     1, "SortPaths" -> {}, "SortDirections" -> {}, "HiddenItemsMap" -> Null, 
+     "UpdateType" -> 1], TypeSystem`NestedGrid`PackagePrivate`$outputID$$, 
+    TypeSystem`NestedGrid`PackagePrivate`$path$$ = {}, 
+    TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 164, 
+    TypeSystem`NestedGrid`PackagePrivate`$hPos$$ = 1, 
+    TypeSystem`NestedGrid`PackagePrivate`$grid$$ = 
+    DynamicModule[{
+     TypeSystem`NestedGrid`PackagePrivate`renderedGrid = Deploy[
+        Style[
+         Grid[{{
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox["\"status\"", FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "Status"]]}, "Item", False], 
+               "Mouse"], ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation["Active", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "Status"]]}, "Item", False], 
+               "Mouse"], ImageSize -> {{57.60000000000001, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox["\"stockholders equity\"", FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "StockholdersEquity"]]}, "Item", 
+                False], "Mouse"], ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 RowBox[{
+                   RowBox[{
+                    FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+                   InterpretationBox[
+                   "2.47645`*^10", 2.47645*^10, Selectable -> False]}], 
+                 FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "StockholdersEquity"]]}, "Item", 
+                False], "Mouse"], ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox["\"successor companies\"", FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "SuccessorCompanies"]]}, "Item", 
+                False], "Mouse"], ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               Style["\[LongDash]", 
+                GrayLevel[0.75]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "SuccessorCompanies"]]}, "Item", 
+                False], "Mouse"], ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox["\"tax provision\"", FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "TaxProvision"]]}, "Item", False],
+                "Mouse"], ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 TemplateBox[{"8.1`*^7", 
+                   RowBox[{
+                    FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+                   RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}], 
+                   "US dollars per year", 
+                   FractionBox["\"USDollars\"", "\"Years\""]}, 
+                  "QuantityPrefixUnit", SyntaxForm -> Mod], FontColor -> 
+                 RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "TaxProvision"]]}, "Item", False],
+                "Mouse"], ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox["\"total assets\"", FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "TotalAssets"]]}, "Item", False], 
+               "Mouse"], ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 RowBox[{
+                   RowBox[{
+                    FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+                   InterpretationBox[
+                   "4.51285`*^10", 4.51285*^10, Selectable -> False]}], 
+                 FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "TotalAssets"]]}, "Item", False], 
+               "Mouse"], ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox["\"total debt\"", FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "TotalDebt"]]}, "Item", False], 
+               "Mouse"], ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 RowBox[{
+                   RowBox[{
+                    FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+                   InterpretationBox[
+                   "1.1958`*^10", 1.1958*^10, Selectable -> False]}], 
+                 FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "TotalDebt"]]}, "Item", False], 
+               "Mouse"], ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox["\"total deposits\"", FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "TotalDeposits"]]}, "Item", 
+                False], "Mouse"], ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               Style["\[LongDash]", 
+                GrayLevel[0.75]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "TotalDeposits"]]}, "Item", 
+                False], "Mouse"], ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox["\"total expenses\"", FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "TotalExpenses"]]}, "Item", 
+                False], "Mouse"], ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 TemplateBox[{"1.8032`*^10", 
+                   RowBox[{
+                    FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+                   RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}], 
+                   "US dollars per year", 
+                   FractionBox["\"USDollars\"", "\"Years\""]}, 
+                  "QuantityPrefixUnit", SyntaxForm -> Mod], FontColor -> 
+                 RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "TotalExpenses"]]}, "Item", 
+                False], "Mouse"], ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox["\"total investments\"", FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "TotalInvestments"]]}, "Item", 
+                False], "Mouse"], ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               Style["\[LongDash]", 
+                GrayLevel[0.75]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "TotalInvestments"]]}, "Item", 
+                False], "Mouse"], ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox["\"total liabilities\"", FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "TotalLiabilities"]]}, "Item", 
+                False], "Mouse"], ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 RowBox[{
+                   RowBox[{
+                    FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+                   InterpretationBox[
+                   "1.689475`*^10", 1.689475*^10, Selectable -> False]}], 
+                 FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "TotalLiabilities"]]}, "Item", 
+                False], "Mouse"], ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                "\"total non-current assets\"", FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "TotalNonCurrentAssets"]]}, 
+                "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 RowBox[{
+                   RowBox[{
+                    FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+                   InterpretationBox[
+                   "4.2506`*^10", 4.2506*^10, Selectable -> False]}], 
+                 FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "TotalNonCurrentAssets"]]}, 
+                "Item", False], "Mouse"], 
+              ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                "\"total non-current liabilities\"", FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "TotalNonCurrentLiabilities"]]}, 
+                "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 RowBox[{
+                   RowBox[{
+                    FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+                   InterpretationBox[
+                   "8.22525`*^9", 8.22525*^9, Selectable -> False]}], 
+                 FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "TotalNonCurrentLiabilities"]]}, 
+                "Item", False], "Mouse"], 
+              ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox["\"total revenue\"", FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "TotalRevenue"]]}, "Item", False],
+                "Mouse"], ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 TemplateBox[{"2.0941`*^10", 
+                   RowBox[{
+                    FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+                   RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}], 
+                   "US dollars per year", 
+                   FractionBox["\"USDollars\"", "\"Years\""]}, 
+                  "QuantityPrefixUnit", SyntaxForm -> Mod], FontColor -> 
+                 RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "TotalRevenue"]]}, "Item", False],
+                "Mouse"], ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox["\"total tax payable\"", FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "TotalTaxPayable"]]}, "Item", 
+                False], "Mouse"], ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               Style["\[LongDash]", 
+                GrayLevel[0.75]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "TotalTaxPayable"]]}, "Item", 
+                False], "Mouse"], ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox["\"trading liabilities\"", FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "TradingLiabilities"]]}, "Item", 
+                False], "Mouse"], ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               Style["\[LongDash]", 
+                GrayLevel[0.75]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "TradingLiabilities"]]}, "Item", 
+                False], "Mouse"], ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox["\"trading securities\"", FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "TradingSecurities"]]}, "Item", 
+                False], "Mouse"], ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               Style["\[LongDash]", 
+                GrayLevel[0.75]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "TradingSecurities"]]}, "Item", 
+                False], "Mouse"], ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox["\"treasury stock\"", FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "TreasuryStock"]]}, "Item", 
+                False], "Mouse"], ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 RowBox[{
+                   RowBox[{
+                    FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+                   InterpretationBox[
+                   "8.29075`*^9", 8.29075*^9, Selectable -> False]}], 
+                 FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "TreasuryStock"]]}, "Item", 
+                False], "Mouse"], ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox["\"unearned income\"", FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "UnearnedIncome"]]}, "Item", 
+                False], "Mouse"], ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               Style["\[LongDash]", 
+                GrayLevel[0.75]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "UnearnedIncome"]]}, "Item", 
+                False], "Mouse"], ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox["\"website\"", FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "Website"]]}, "Item", False], 
+               "Mouse"], ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation["http://www.carnivalcorp.com", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "Website"]]}, "Item", False], 
+               "Mouse"], 
+              ImageSize -> {{259.20000000000005`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox["\"working capital\"", FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "WorkingCapital"]]}, "Item", 
+                False], "Mouse"], ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 RowBox[{
+                   RowBox[{
+                    FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}], 
+                   InterpretationBox[
+                    RowBox[{"-", "7.16525`*^9"}], -7.16525*^9, Selectable -> 
+                    False]}], FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+               "493aba8d-d65a-4c74-9a3b-17ac2196f826"][{
+                 Key[
+                  EntityProperty["Company", "WorkingCapital"]]}, "Item", 
+                False], "Mouse"], ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Deploy[
+              Pane[
+               Row[{
+                 Spacer[2], 
+                 Style[
+                  Row[{
+                    Button[
+                    MouseAppearance[
+                    Mouseover[
+                    Graphics[{{
+                    EdgeForm[None], 
+                    FaceForm[None], 
+                    Rectangle[{0, 0}, {18, 18}, RoundingRadius -> 2]}, 
+                    Rotate[
+                    Translate[{
+                    CapForm[Round], 
+                    RGBColor[
+                    0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843], 
+                    Line[{{0, 0}, {4, 5}, {8, 0}}], 
+                    Line[{{0, 5}, {8, 5}}]}, {5, 6.5}], 0, {9, 9}]}, 
+                    ImageSize -> (1 -> 1), ImagePadding -> {{0, 1}, {1, 0}}, 
+                    BaselinePosition -> Scaled[0.35]], 
+                    Graphics[{{
+                    EdgeForm[
+                    RGBColor[
+                    0.27450980392156865`, 0.5411764705882353, 
+                    0.796078431372549]], 
+                    FaceForm[None], 
+                    Rectangle[{0, 0}, {18, 18}, RoundingRadius -> 2]}, 
+                    Rotate[
+                    Translate[{
+                    CapForm[Round], 
+                    RGBColor[
+                    0.27450980392156865`, 0.5411764705882353, 
+                    0.796078431372549], 
+                    Line[{{0, 0}, {4, 5}, {8, 0}}], 
+                    Line[{{0, 5}, {8, 5}}]}, {5, 6.5}], 0, {9, 9}]}, 
+                    ImageSize -> (1 -> 1), ImagePadding -> {{0, 1}, {1, 0}}, 
+                    BaselinePosition -> Scaled[0.35]]], "LinkHand"], 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 
+                    Clip[TypeSystem`NestedGrid`PackagePrivate`$vPos$$ + (-20) 
+                    If[True, 183, 1], {1, 183 - -20 + 1}]; 
+                    TypeSystem`NestedGrid`PackagePrivate`updateState[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$], True][
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$], Appearance -> 
+                    None], 
+                    Button[
+                    MouseAppearance[
+                    Mouseover[
+                    Graphics[{{
+                    EdgeForm[None], 
+                    FaceForm[None], 
+                    Rectangle[{0, 0}, {18, 18}, RoundingRadius -> 2]}, 
+                    Rotate[
+                    Translate[{
+                    CapForm[Round], 
+                    RGBColor[
+                    0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843], 
+                    Line[{{0, 0}, {4, 5}, {8, 0}}]}, {5, 6.5}], 0, {9, 9}]}, 
+                    ImageSize -> (1 -> 1), ImagePadding -> {{0, 1}, {1, 0}}, 
+                    BaselinePosition -> Scaled[0.35]], 
+                    Graphics[{{
+                    EdgeForm[
+                    RGBColor[
+                    0.27450980392156865`, 0.5411764705882353, 
+                    0.796078431372549]], 
+                    FaceForm[None], 
+                    Rectangle[{0, 0}, {18, 18}, RoundingRadius -> 2]}, 
+                    Rotate[
+                    Translate[{
+                    CapForm[Round], 
+                    RGBColor[
+                    0.27450980392156865`, 0.5411764705882353, 
+                    0.796078431372549], 
+                    Line[{{0, 0}, {4, 5}, {8, 0}}]}, {5, 6.5}], 0, {9, 9}]}, 
+                    ImageSize -> (1 -> 1), ImagePadding -> {{0, 1}, {1, 0}}, 
+                    BaselinePosition -> Scaled[0.35]]], "LinkHand"], 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 
+                    Clip[TypeSystem`NestedGrid`PackagePrivate`$vPos$$ + (-20) 
+                    If[False, 183, 1], {1, 183 - -20 + 1}]; 
+                    TypeSystem`NestedGrid`PackagePrivate`updateState[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$], True][
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$], Appearance -> 
+                    None], " ", 
+                    Style[
+                    Mouseover[
+                    Row[{"rows ", 164, "\[Dash]", 183, " of ", 
+                    Style[
+                    183, FontColor -> GrayLevel[0], FontWeight -> "Medium"]}, 
+                    BaseStyle -> {
+                    FontSize -> 8., FontColor -> 
+                    RGBColor[
+                    0.5098039215686274, 0.5098039215686274, 
+                    0.5098039215686274]}], 
+                    Row[{"rows ", 164, "\[Dash]", 183, " of ", 
+                    Style[
+                    183, FontColor -> GrayLevel[0], FontWeight -> "Medium"]}, 
+                    BaseStyle -> {
+                    FontSize -> 8., FontColor -> 
+                    RGBColor[
+                    0.5098039215686274, 0.5098039215686274, 
+                    0.5098039215686274]}]], ContextMenu -> {
+                    MenuItem["Hide", 
+                    KernelExecute[
+                    
+                    TypeSystem`NestedGrid`PackagePrivate`adjustLimits[{
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$}, "Rows",
+                     1, {}]], MenuEvaluator -> Automatic], 
+                    MenuItem["Show up to 10 Rows", 
+                    KernelExecute[
+                    
+                    TypeSystem`NestedGrid`PackagePrivate`adjustLimits[{
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$}, "Rows",
+                     10, {}]], MenuEvaluator -> Automatic], 
+                    MenuItem["Show up to 30 Rows", 
+                    KernelExecute[
+                    
+                    TypeSystem`NestedGrid`PackagePrivate`adjustLimits[{
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$}, "Rows",
+                     30, {}]], MenuEvaluator -> Automatic], 
+                    MenuItem["Show up to 100 Rows", 
+                    KernelExecute[
+                    
+                    TypeSystem`NestedGrid`PackagePrivate`adjustLimits[{
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$}, "Rows",
+                     100, {}]], MenuEvaluator -> Automatic], 
+                    MenuItem["Show All", 
+                    KernelExecute[
+                    
+                    TypeSystem`NestedGrid`PackagePrivate`adjustLimits[{
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$}, "Rows",
+                     100000000, {}]], MenuEvaluator -> Automatic]}], " ", 
+                    Button[
+                    MouseAppearance[
+                    Mouseover[
+                    Graphics[{{
+                    EdgeForm[None], 
+                    FaceForm[None], 
+                    Rectangle[{0, 0}, {18, 18}, RoundingRadius -> 2]}, 
+                    Rotate[
+                    Translate[{
+                    CapForm[Round], 
+                    RGBColor[
+                    0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843], 
+                    Line[{{0, 0}, {4, 5}, {8, 0}}]}, {5, 6.5}], 180 Degree, {
+                    9, 9}]}, ImageSize -> (1 -> 1), 
+                    ImagePadding -> {{0, 1}, {1, 0}}, BaselinePosition -> 
+                    Scaled[0.35]], 
+                    Graphics[{{
+                    EdgeForm[
+                    RGBColor[
+                    0.27450980392156865`, 0.5411764705882353, 
+                    0.796078431372549]], 
+                    FaceForm[None], 
+                    Rectangle[{0, 0}, {18, 18}, RoundingRadius -> 2]}, 
+                    Rotate[
+                    Translate[{
+                    CapForm[Round], 
+                    RGBColor[
+                    0.27450980392156865`, 0.5411764705882353, 
+                    0.796078431372549], 
+                    Line[{{0, 0}, {4, 5}, {8, 0}}]}, {5, 6.5}], 180 Degree, {
+                    9, 9}]}, ImageSize -> (1 -> 1), 
+                    ImagePadding -> {{0, 1}, {1, 0}}, BaselinePosition -> 
+                    Scaled[0.35]]], "LinkHand"], 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 
+                    Clip[TypeSystem`NestedGrid`PackagePrivate`$vPos$$ + 
+                    20 If[False, 183, 1], {1, 183 - 20 + 1}]; 
+                    TypeSystem`NestedGrid`PackagePrivate`updateState[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$], True][
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$], Appearance -> 
+                    None], 
+                    Button[
+                    MouseAppearance[
+                    Mouseover[
+                    Graphics[{{
+                    EdgeForm[None], 
+                    FaceForm[None], 
+                    Rectangle[{0, 0}, {18, 18}, RoundingRadius -> 2]}, 
+                    Rotate[
+                    Translate[{
+                    CapForm[Round], 
+                    RGBColor[
+                    0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843], 
+                    Line[{{0, 0}, {4, 5}, {8, 0}}], 
+                    Line[{{0, 5}, {8, 5}}]}, {5, 6.5}], 180 Degree, {9, 9}]}, 
+                    ImageSize -> (1 -> 1), ImagePadding -> {{0, 1}, {1, 0}}, 
+                    BaselinePosition -> Scaled[0.35]], 
+                    Graphics[{{
+                    EdgeForm[
+                    RGBColor[
+                    0.27450980392156865`, 0.5411764705882353, 
+                    0.796078431372549]], 
+                    FaceForm[None], 
+                    Rectangle[{0, 0}, {18, 18}, RoundingRadius -> 2]}, 
+                    Rotate[
+                    Translate[{
+                    CapForm[Round], 
+                    RGBColor[
+                    0.27450980392156865`, 0.5411764705882353, 
+                    0.796078431372549], 
+                    Line[{{0, 0}, {4, 5}, {8, 0}}], 
+                    Line[{{0, 5}, {8, 5}}]}, {5, 6.5}], 180 Degree, {9, 9}]}, 
+                    ImageSize -> (1 -> 1), ImagePadding -> {{0, 1}, {1, 0}}, 
+                    BaselinePosition -> Scaled[0.35]]], "LinkHand"], 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 
+                    Clip[TypeSystem`NestedGrid`PackagePrivate`$vPos$$ + 
+                    20 If[True, 183, 1], {1, 183 - 20 + 1}]; 
+                    TypeSystem`NestedGrid`PackagePrivate`updateState[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$], True][
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$], Appearance -> 
+                    None]}], ContextMenu -> {}], 
+                 Graphics[{
+                   RGBColor[
+                   0.8196078431372549, 0.8196078431372549, 
+                    0.8196078431372549], 
+                   Line[{{0, 0}, {0, 19}}]}, ImageSize -> (1 -> 1), 
+                  ImagePadding -> {{0, 0}, {0, 0}}, BaselinePosition -> 
+                  Scaled[0.35]]}], ImageMargins -> {{0, -1}, {-1, 1}}]], 
+             Background -> 
+             RGBColor[
+              0.9764705882352941, 0.9764705882352941, 0.9764705882352941], 
+             Alignment -> {Left, Top}], SpanFromLeft}}, 
+          BaseStyle -> {
+           ContextMenu -> 
+            Dynamic[TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger; 
+              Which[TypeSystem`NestedGrid`PackagePrivate`$lastOutputID =!= 
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$, {}, 
+                TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger === 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenuTrigger, 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenu, True, 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenuTrigger = 
+                 TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger; 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenu = 
+                 Block[{TypeSystem`NestedGrid`PackagePrivate`$globalScrollPos = \
+{TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$}}, 
+                   
+                   With[{TypeSystem`NestedGrid`PackagePrivate`lastPath$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPathType, 
+                    TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$\
+lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
+                    MatchQ[TypeSystem`NestedGrid`PackagePrivate`$lastPathType, 
+                    Alternatives["RowHeader", "ColumnHeader"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`headerHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$]], 
+                    TypeSystem`NestedGrid`PackagePrivate`allHidden$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`allHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`anyHidden$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`anyHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`columnSortDirection[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$[
+                    "SortPaths"], 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$[
+                    "SortDirections"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`haveData$ = Not[
+                    FailureQ[
+                    TypeSystem`NestedGrid`PackagePrivate`datasetInitialData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$]]], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$ = Not[
+                    FreeQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, Keys]]}, 
+                    Join[{
+                    If[
+                    Or[
+                    Not[TypeSystem`NestedGrid`PackagePrivate`haveData$], 
+                    Not[TypeSystem`NestedGrid`PackagePrivate`anyHidden$], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$], 
+                    Nothing, 
+                    MenuItem[
+                    StringJoin["Show ", 
+                    Which[
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "Item", "", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "RowHeader", "Row", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "ColumnHeader", "Column", True, ""]], 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateHiddenItems[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "remove"]], MenuEvaluator -> Automatic]], 
+                    If[
+                    Or[
+                    Not[TypeSystem`NestedGrid`PackagePrivate`haveData$], 
+                    TypeSystem`NestedGrid`PackagePrivate`pathEmptyQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$, 
+                    And[
+                    TypeSystem`NestedGrid`PackagePrivate`allHidden$, 
+                    TypeSystem`NestedGrid`PackagePrivate`headerHidden$]], 
+                    Nothing, 
+                    MenuItem[
+                    StringJoin["Hide ", 
+                    Which[
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "Item", "", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "RowHeader", "Row", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "ColumnHeader", "Column", True, ""]], 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateHiddenItems[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, "add"]], 
+                    MenuEvaluator -> Automatic]], Delimiter}, 
+                    If[
+                    And[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MatchQ[TypeSystem`NestedGrid`PackagePrivate`lastPathType$, 
+                    Alternatives["ColumnHeader", "KeyDummy"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$, 
+                    Not[TypeSystem`NestedGrid`PackagePrivate`allHidden$]], {
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    "Ascending", 
+                    MenuItem["Sort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "Ascending"]], MenuEvaluator -> Automatic], Nothing], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    "Descending", 
+                    MenuItem["Reverse Sort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "Descending"]], MenuEvaluator -> Automatic], Nothing], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    None, 
+                    MenuItem["Unsort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, None]], 
+                    MenuEvaluator -> Automatic], Nothing], Delimiter}, {}], {
+                    MenuItem["Copy Position to Clipboard", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                    TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                    MenuEvaluator -> Automatic], 
+                    MenuItem["Copy Data to Clipboard", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                    MenuEvaluator -> Automatic], Delimiter, 
+                    MenuItem["Paste Position in New Cell", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                    TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                    MenuEvaluator -> Automatic], 
+                    MenuItem["Paste Data in New Cell", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                    MenuEvaluator -> Automatic]}]]]]], FontFamily -> 
+            "Verdana", FontSize -> 12}, Spacings -> {0, 0}, Alignment -> Left,
+           Dividers -> All, FrameStyle -> GrayLevel[0.7490196078431373], 
+          BaseStyle -> {FontFamily -> "Verdana", FontSize -> 12}], 
+         LineBreakWithin -> False, ContextMenu -> {}, NumberMarks -> False, 
+         ShowAutoStyles -> False]], 
+      TypeSystem`NestedGrid`PackagePrivate`initialQ = True}, 
+     Dynamic[
+      TypeSystem`NestedGrid`PackagePrivate`setupViewPath[
+      TypeSystem`NestedGrid`PackagePrivate`$path$$, If[
+         Not[TypeSystem`NestedGrid`PackagePrivate`initialQ], 
+         Module[{
+          TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = $Failed, 
+           TypeSystem`NestedGrid`PackagePrivate`tmpData$ = 
+           TypeSystem`NestedGrid`PackagePrivate`datasetData[
+            TypeSystem`NestedGrid`PackagePrivate`$state$$]}, 
+          TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = If[
+             FailureQ[TypeSystem`NestedGrid`PackagePrivate`tmpData$], 
+             TypeSystem`NestedGrid`PackagePrivate`renderedGrid, 
+             TypeSystem`NestedGrid`PackagePrivate`renderGrid[
+             TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+              TypeSystem`NestedGrid`PackagePrivate`localHold[
+              TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+             TypeSystem`NestedGrid`PackagePrivate`tmpData$]]; If[
+            Not[
+             FailureQ[TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]], 
+            TypeSystem`NestedGrid`PackagePrivate`renderedGrid = 
+            TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]; Null]]; 
+       TypeSystem`NestedGrid`PackagePrivate`initialQ = False; 
+       TypeSystem`NestedGrid`PackagePrivate`$vPos$$; 
+       TypeSystem`NestedGrid`PackagePrivate`$hPos$$; If[
+         FailureQ[TypeSystem`NestedGrid`PackagePrivate`renderedGrid], 
+         TypeSystem`SparseGrid[
+          TypeSystem`H["(data no longer present)"]], 
+         If[GeneralUtilities`$DebugMode, 
+          Row[{TypeSystem`NestedGrid`PackagePrivate`renderedGrid, "  ", 
+            TypeSystem`NestedGrid`PackagePrivate`formatState[
+            TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+             TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+             TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+             TypeSystem`NestedGrid`PackagePrivate`$hPos$$]}], 
+          TypeSystem`NestedGrid`PackagePrivate`renderedGrid]]], 
+      TrackedSymbols :> {
+       TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$hPos$$}], 
+     DynamicModuleValues :> {}], 
+    TypeSystem`NestedGrid`PackagePrivate`$topBar$$ = Dynamic[
+     TypeSystem`NestedGrid`PackagePrivate`makeFramedBar[
+      TypeSystem`PackageScope`SubViewPathbar[
+      TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+       TypeSystem`NestedGrid`PackagePrivate`updateState[
+       TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+        TypeSystem`NestedGrid`PackagePrivate`localHold[
+        TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]]], 
+     TrackedSymbols :> {TypeSystem`NestedGrid`PackagePrivate`$path$$}], 
+    TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$ = Style[
+     Framed[
+      Dynamic[
+       Replace[
+       TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$, {
+        TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+          TypeSystem`NestedGrid`PackagePrivate`$outputID$$][Null, 
+           Blank[]] -> "", 
+         TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+          TypeSystem`NestedGrid`PackagePrivate`$outputID$$][
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`path$, 
+            Blank[]], 
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`pathType$, 
+            Blank[]], 
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$, 
+            Blank[]]] :> (
+          Increment[TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger]; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPath = 
+           TypeSystem`NestedGrid`PackagePrivate`path$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPathType = 
+           TypeSystem`NestedGrid`PackagePrivate`pathType$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPathIsLeafHeader = 
+           TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastOutputID = 
+           TypeSystem`NestedGrid`PackagePrivate`$outputID$$; 
+          TypeSystem`NestedGrid`PackagePrivate`makePathTrail[
+           TypeSystem`NestedGrid`PackagePrivate`path$, 
+            TypeSystem`NestedGrid`PackagePrivate`makePathElements]), Null :> 
+         Spacer[10], Blank[] :> Spacer[10]}], 
+       TrackedSymbols :> {
+        TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$}], FrameStyle -> 
+      None, ImageMargins -> 0, FrameMargins -> 0, Alignment -> Top, 
+      ImageSize -> {Automatic, 15}], FontSize -> 1], 
+    TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = Null}, 
+    DynamicWrapperBox[
+     DynamicBox[ToBoxes[
+       Dataset`DatasetContent[
+       2, "Path" -> Hold[TypeSystem`NestedGrid`PackagePrivate`$path$$], 
+        "Grid" -> Hold[TypeSystem`NestedGrid`PackagePrivate`$grid$$], "State" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$state$$], "VPos" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$vPos$$], "HPos" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$hPos$$], "TopBar" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$topBar$$], "BottomBar" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$], "OutputID" -> 
+        Hold[
+          TypeSystem`NestedGrid`PackagePrivate`localHold[
+          TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]], StandardForm],
+      ImageSizeCache->{474., {284.634033203125, 290.365966796875}},
+      TrackedSymbols:>{
+       TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$grid$$}], 
+     TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = 
+     MouseAnnotation[],
+     ImageSizeCache->{474., {284.634033203125, 290.365966796875}}],
+    BaseStyle->{LineBreakWithin -> False},
+    DynamicModuleValues:>{},
+    Initialization:>
+     Block[{$ContextPath = $ContextPath}, Needs["TypeSystem`"]; 
+      Needs["Dataset`"]; 
+      TypeSystem`NestedGrid`PackagePrivate`$outputID$$ = CreateUUID[]],
+    UnsavedVariables:>{TypeSystem`NestedGrid`PackagePrivate`$outputID$$}],
+   Deploy,
+   DefaultBaseStyle->"Deploy"],
+  Dataset`InterpretDataset[1],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{3.802733457936317*^9, 3.8027339322870407`*^9},
+ CellLabel->"Out[84]=",ExpressionUUID->"a79f1feb-6a96-4db7-a4fe-980e99605671"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.802733296209396*^9, 3.8027333160419064`*^9}},
+ CellLabel->"In[86]:=",ExpressionUUID->"3af2a142-0c83-463c-a55d-d4be801fd28b"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"carnivalExpenses", " ", "=", " ", 
+   RowBox[{"CompanyData", "[", 
+    RowBox[{
+    "\"\<CarnivalCorporation::3jd9t\>\"", ",", " ", "\"\<TotalExpenses\>\""}],
+     "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.802299530033125*^9, 3.8022995706305313`*^9}, {
+   3.8024725772024193`*^9, 3.8024725798716927`*^9}, {3.8024727983309803`*^9, 
+   3.8024728032719088`*^9}, 3.80273246368174*^9},
+ CellLabel->"In[87]:=",ExpressionUUID->"efd899be-0d92-4945-893a-231b89f618b3"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"carnivalRevenue", " ", "=", " ", 
+   RowBox[{"CompanyData", "[", 
+    RowBox[{
+    "\"\<CarnivalCorporation::3jd9t\>\"", ",", " ", "\"\<TotalRevenue\>\""}], 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.802299530033125*^9, 3.8022995706305313`*^9}, {
+   3.8024725772024193`*^9, 3.802472601526647*^9}, {3.802472807509521*^9, 
+   3.802472815693954*^9}, 3.802732467925454*^9},
+ CellLabel->"In[88]:=",ExpressionUUID->"1afb5657-7673-4532-a4d3-decd52b501db"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"royalExpenses", " ", "=", " ", 
+   RowBox[{"CompanyData", "[", 
+    RowBox[{
+    "\"\<RoyalCaribbeanCruises::npc7r\>\"", ",", " ", 
+     "\"\<TotalExpenses\>\""}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.8024729452927427`*^9, 3.8024729641721067`*^9}, 
+   3.802732473203805*^9},
+ CellLabel->"In[89]:=",ExpressionUUID->"7e8b7e49-b562-4165-9444-6a5620cbdac6"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"royalRevenue", " ", "=", " ", 
+   RowBox[{"CompanyData", "[", 
+    RowBox[{
+    "\"\<RoyalCaribbeanCruises::npc7r\>\"", ",", " ", 
+     "\"\<TotalRevenue\>\""}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.8024729728307247`*^9, 3.802472995467421*^9}, {
+  3.802732474990567*^9, 3.802732475731834*^9}},
+ CellLabel->"In[90]:=",ExpressionUUID->"364291ef-7e7c-4932-8e10-2717a536e415"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"norwegianExpenses", " ", "=", " ", 
+   RowBox[{"CompanyData", "[", 
+    RowBox[{
+    "\"\<NorwegianCruiseLineHoldings::5jq73\>\"", ",", " ", 
+     "\"\<TotalExpenses\>\""}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.802473131355009*^9, 3.802473155841462*^9}, 
+   3.802732477427647*^9},
+ CellLabel->"In[91]:=",ExpressionUUID->"49d81aac-ddfa-4a06-b997-59f9bc2102f2"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"norwegianRevenue", " ", "=", " ", 
+   RowBox[{"CompanyData", "[", 
+    RowBox[{
+    "\"\<NorwegianCruiseLineHoldings::5jq73\>\"", ",", " ", 
+     "\"\<TotalRevenue\>\""}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.802473164679462*^9, 3.80247317096908*^9}, {
+   3.802473292972638*^9, 3.80247329961099*^9}, 3.8027324792579603`*^9},
+ CellLabel->"In[92]:=",ExpressionUUID->"ab062f8d-32cc-4d7c-9336-15d69c5b37d8"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"plotCompanyFundamentalDataOneSeries", "[", 
+   RowBox[{"symbol_", ",", "startDate_", ",", "endDate_", ",", "id_"}], "]"}],
+   ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"mycompany", ",", "mycompanydata"}], "}"}], ",", 
+    RowBox[{
+     RowBox[{"mycompany", "=", 
+      RowBox[{"EntityValue", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Interpreter", "[", "\"\<Company\>\"", "]"}], "[", "symbol", 
+         "]"}], ",", "\"\<Company\>\""}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"mycompanydata", "=", 
+      RowBox[{"EntityValue", "[", 
+       RowBox[{"mycompany", ",", 
+        RowBox[{"Dated", "[", 
+         RowBox[{"id", ",", 
+          RowBox[{"Interval", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"DateObject", "[", "startDate", "]"}], ",", 
+             RowBox[{"DateObject", "[", "endDate", "]"}]}], "}"}], "]"}]}], 
+         "]"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"DateListPlot", "[", 
+      RowBox[{"mycompanydata", ",", 
+       RowBox[{"PlotLabel", "\[Rule]", 
+        RowBox[{"symbol", "<>", "\"\<:\>\"", "<>", "id"}]}], ",", 
+       RowBox[{"PlotTheme", "\[Rule]", "\"\<Detailed\>\""}]}], "]"}]}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"plotCarnivalrev", " ", "=", " ", 
+  RowBox[{"GraphicsColumn", "[", 
+   RowBox[{"{", 
+    RowBox[{"plotCompanyFundamentalDataOneSeries", "[", 
+     RowBox[{"\"\<CARNVIAL CORP\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"2015", ",", "1", ",", "1"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"2020", ",", "1", ",", "1"}], "}"}], ",", 
+      "\"\<TotalRevenue\>\""}], "]"}], "}"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"#plotCarnivalexp", " ", "=", " ", 
+  RowBox[{"GraphicsColumn", "[", 
+   RowBox[{"{", 
+    RowBox[{"plotCompanyFundamentalDataOneSeries", "[", 
+     RowBox[{"\"\<CARNVIAL CORP\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"2015", ",", "1", ",", "1"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"2020", ",", "1", ",", "1"}], "}"}], ",", 
+      "\"\<TotalExpenses\>\""}], "]"}], "}"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"#plotCarnivalasset", " ", "=", " ", 
+   RowBox[{"GraphicsColumn", "[", 
+    RowBox[{"{", 
+     RowBox[{"plotCompanyFundamentalDataOneSeries", "[", 
+      RowBox[{"\"\<CARNVIAL CORP\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"2015", ",", "1", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"2020", ",", "1", ",", "1"}], "}"}], ",", 
+       "\"\<TotalAssets\>\""}], "]"}], "}"}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.80273258486421*^9, 3.802732584869972*^9}, {
+   3.802732709569605*^9, 3.8027327799527607`*^9}, {3.802732874984935*^9, 
+   3.8027329292711678`*^9}, {3.802733194583186*^9, 3.8027331955033083`*^9}, {
+   3.80273345290279*^9, 3.802733453673369*^9}, {3.802733923463649*^9, 
+   3.802733924299761*^9}, {3.802734291983532*^9, 3.8027343159949207`*^9}, {
+   3.802734586962727*^9, 3.802734593295409*^9}, 3.8029836388585243`*^9},
+ CellLabel->"In[1]:=",ExpressionUUID->"68fa0d23-ae11-4f60-b43d-278d99a438dc"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, InsetBox[
+    GraphicsBox[{{}, {{{}, {}, 
+        {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+         0.012833333333333334`], AbsoluteThickness[1.6], 
+         LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQQFBcKvHYE0T2gNrxOQ3jBTCcxnu5IO5n84ZAjm
+t/l7gvkMhxzA/G91rmC+wEF/MD9tex2YH/AqDsyv6d0K5k8QzgPzO2ZI84H4
+C4RqwXyPjDYwv+F5N5ivoHUSzD8gMBvMZ5htzQ+2z2oVmG9UxigAts9yJ5g/
+basfmP+B9wSYL35rO5hvYH4dzJ8sIiUI4hckPAPz78xJA/Mb4r+C+SenTAXz
+E0xY3oD4Xjv/gfkLYoXBfOP0QiEQ/0GbEpi/OlxcGGxfqyGYL3ElRdgJAKaH
+VQo=
+          "]]}}, 
+       {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+        0.012833333333333334`], AbsoluteThickness[1.6]}, {
+        {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+         0.012833333333333334`], AbsoluteThickness[1.6]}, {}}, {
+        {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+         0.012833333333333334`], AbsoluteThickness[1.6]}, {}}}, {{}, {}}},
+     AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+     Axes->{False, False},
+     AxesLabel->{None, None},
+     AxesOrigin->{3.6340704*^9, 1.5431166666666668`*^10},
+     DisplayFunction->Identity,
+     Frame->{{True, True}, {True, True}},
+     FrameLabel->{{None, None}, {None, None}},
+     FrameStyle->Automatic,
+     FrameTicks->FrontEndValueCache[{{Automatic, Automatic}, {
+         Charting`DateTicksFunction[
+         Automatic, DateTicksFormat -> {Automatic}], 
+         Charting`DateTicksFunction[
+         Automatic, DateTicksFormat -> {Automatic}, "TickLabels" -> 
+          None]}}, {{Automatic, Automatic}, {{{3.6290592*^9, 
+           FormBox[
+            StyleBox["\"2015\"", 
+             Directive[], {}, StripOnInput -> False], TraditionalForm], {
+           0.013888888888888888`, 0.}, 
+           Directive[]}, {3.6605952*^9, 
+           FormBox[
+            StyleBox["\"2016\"", 
+             Directive[], {}, StripOnInput -> False], TraditionalForm], {
+           0.013888888888888888`, 0.}, 
+           Directive[]}, {3.6922176*^9, 
+           FormBox[
+            StyleBox["\"2017\"", 
+             Directive[], {}, StripOnInput -> False], TraditionalForm], {
+           0.013888888888888888`, 0.}, 
+           Directive[]}, {3.7237536*^9, 
+           FormBox[
+            StyleBox["\"2018\"", 
+             Directive[], {}, StripOnInput -> False], TraditionalForm], {
+           0.013888888888888888`, 0.}, 
+           Directive[]}, {3.7552896*^9, 
+           FormBox[
+            StyleBox["\"2019\"", 
+             Directive[], {}, StripOnInput -> False], TraditionalForm], {
+           0.013888888888888888`, 0.}, 
+           Directive[]}, {3.7868256*^9, 
+           FormBox[
+            StyleBox["\"2020\"", 
+             Directive[], {}, StripOnInput -> False], TraditionalForm], {
+           0.013888888888888888`, 0.}, 
+           Directive[]}, {3.818448*^9, 
+           FormBox[
+            StyleBox["\"2021\"", 
+             Directive[], {}, StripOnInput -> False], TraditionalForm], {
+           0.013888888888888888`, 0.}, 
+           Directive[]}, {3.6290592*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6341568*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6394272*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6446976*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6500544*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6553248*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6605952*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6605952*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6657792*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6710496*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.67632*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6816768*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6869472*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6922176*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6922176*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6973152*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7025856*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.707856*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7132128*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7184832*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7237536*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7237536*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7288512*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7341216*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.739392*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7447488*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7500192*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7552896*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7552896*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7603872*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7656576*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.770928*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7762848*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7815552*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7868256*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7868256*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7920096*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.79728*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.8025504*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.8079072*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.8131776*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.818448*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}}, {{3.6290592*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.013888888888888888`, 0.}, 
+           Directive[]}, {3.6605952*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.013888888888888888`, 0.}, 
+           Directive[]}, {3.6922176*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.013888888888888888`, 0.}, 
+           Directive[]}, {3.7237536*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.013888888888888888`, 0.}, 
+           Directive[]}, {3.7552896*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.013888888888888888`, 0.}, 
+           Directive[]}, {3.7868256*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.013888888888888888`, 0.}, 
+           Directive[]}, {3.818448*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.013888888888888888`, 0.}, 
+           Directive[]}, {3.6290592*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6341568*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6394272*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6446976*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6500544*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6553248*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6605952*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6605952*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6657792*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6710496*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.67632*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6816768*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6869472*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6922176*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6922176*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6973152*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7025856*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.707856*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7132128*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7184832*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7237536*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7237536*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7288512*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7341216*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.739392*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7447488*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7500192*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7552896*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7552896*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7603872*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7656576*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.770928*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7762848*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7815552*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7868256*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7868256*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7920096*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.79728*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.8025504*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.8079072*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.8131776*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.818448*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}}}}],
+     GridLines->FrontEndValueCache[{Charting`ScaledTickValues[
+         (Charting`convertGridLines[
+          ((Transpose[{#, 
+            Table[
+             Directive[
+              GrayLevel[0.4, 0.5], 
+              AbsoluteThickness[1], 
+              AbsoluteDashing[{1, 2}]], {
+              Length[#]}]}]& )[
+           Part[
+            Select[
+             Charting`DateTicksFunction[
+             Automatic, DateTicksFormat -> {Automatic}][
+              SlotSequence[1]], And[
+              FreeQ[#, 
+               Alternatives["", 
+                Spacer[{0, 0}]]], Head[#] === List, Length[#] > 0]& ], All, 
+            1]]& )[
+           SlotSequence[1]], {{3.6309456000000005`*^9, 
+          3.7871856000000005`*^9}}, Automatic]& )[
+          SlotSequence[1]], {Identity, Identity}]& , 
+        Automatic}, {{{3.6290592*^9, 
+          Directive[
+           GrayLevel[0.4], 
+           Opacity[0.5], 
+           AbsoluteThickness[1.], 
+           AbsoluteDashing[{1., 2.}]]}, {3.6605952*^9, 
+          Directive[
+           GrayLevel[0.4], 
+           Opacity[0.5], 
+           AbsoluteThickness[1.], 
+           AbsoluteDashing[{1., 2.}]]}, {3.6922176*^9, 
+          Directive[
+           GrayLevel[0.4], 
+           Opacity[0.5], 
+           AbsoluteThickness[1.], 
+           AbsoluteDashing[{1., 2.}]]}, {3.7237536*^9, 
+          Directive[
+           GrayLevel[0.4], 
+           Opacity[0.5], 
+           AbsoluteThickness[1.], 
+           AbsoluteDashing[{1., 2.}]]}, {3.7552896*^9, 
+          Directive[
+           GrayLevel[0.4], 
+           Opacity[0.5], 
+           AbsoluteThickness[1.], 
+           AbsoluteDashing[{1., 2.}]]}, {3.7868256*^9, 
+          Directive[
+           GrayLevel[0.4], 
+           Opacity[0.5], 
+           AbsoluteThickness[1.], 
+           AbsoluteDashing[{1., 2.}]]}, {3.818448*^9, 
+          Directive[
+           GrayLevel[0.4], 
+           Opacity[0.5], 
+           AbsoluteThickness[1.], 
+           AbsoluteDashing[{1., 2.}]]}}, Automatic}],
+     GridLinesStyle->Directive[
+       GrayLevel[0.4, 0.5], 
+       AbsoluteThickness[1], 
+       AbsoluteDashing[{1, 2}]],
+     ImagePadding->{{46.99999999999909, 11.304849884527528`}, {17., 
+      18.153806080202003`}},
+     Method->{
+      "NoShowPlotTheme" -> "Detailed", "OptimizePlotMarkers" -> True, 
+       "OptimizePlotMarkers" -> True, 
+       "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+           Identity[
+            Part[#, 1]], 
+           Identity[
+            Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+           Identity[
+            Part[#, 1]], 
+           Identity[
+            Part[#, 2]]}& )}},
+     PlotLabel->FormBox["\"CARNVIAL CORP:TotalRevenue\"", TraditionalForm],
+     PlotRange->{{3.6340704*^9, 3.7840608*^9}, {1.5431166666666668`*^10, 
+      2.0824*^10}},
+     PlotRangeClipping->True,
+     PlotRangePadding->{{
+        Scaled[0.02], 
+        Scaled[0.02]}, {
+        Scaled[0.05], 
+        Scaled[0.05]}},
+     Ticks->{{}, Automatic}], {189., -116.3461231235973}, 
+    ImageScaled[{0.5, 0.5}], {360, 221.6116630925663}], {}},
+  ImageSize->{
+    UpTo[360], 
+    UpTo[223]},
+  PlotRange->{{0, 378.}, {-232.6922462471946, 0}},
+  PlotRangePadding->{6, 5}]], "Output",
+ CellChangeTimes->{{3.8027345874362288`*^9, 3.80273459619774*^9}, 
+   3.802983644210882*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"dc41c032-a680-4376-82f7-ee007886c6ed"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Set", "write", 
+   "\"Tag \\!\\(\\*RowBox[{\\\"Slot\\\"}]\\) in \
+\\!\\(\\*RowBox[{\\\"#plotCarnivalexp\\\"}]\\) is Protected.\"", 2, 3, 2, 
+   27673619453043448966, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.802734587752249*^9, 3.802734596520226*^9}, 
+   3.8029836446118603`*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"c83b40b7-65b0-4820-b6f5-3e1ce845b2b8"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, InsetBox[
+    GraphicsBox[{{}, {{{}, {}, 
+        {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+         0.012833333333333334`], AbsoluteThickness[1.6], 
+         LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQQFBcKvHYF0RuhJTicgvWGmEpj/7V0JmP/hkCGY
+3xf8kQPEZzjkAOa/WFwJ5gsc9AfzOw4kgfkBr+LA/JByezB/gnAemL9jWw+Y
+v0CoFsyP4joH5jc87wbzr7kYgO07IDAbzNeymAHmM1itAvP11rdyge2z3Alx
+b7c5N9h9vCfA/CtNH8F8A/PrYP6yqzN5QPyChGdgvofCPDC/If4rmH9L/ReY
+n2DC8gZsvu4dXrD7YoXBfDaua3wg/oM2JTDfY94XfrB9rYZg/psj4QJOAGVH
+Wc8=
+          "]]}}, 
+       {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+        0.012833333333333334`], AbsoluteThickness[1.6]}, {
+        {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+         0.012833333333333334`], AbsoluteThickness[1.6]}, {}}, {
+        {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+         0.012833333333333334`], AbsoluteThickness[1.6]}, {}}}, {{}, {}}},
+     AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+     Axes->{False, False},
+     AxesLabel->{None, None},
+     AxesOrigin->{3.6340704*^9, 1.2766333333333334`*^10},
+     DisplayFunction->Identity,
+     Frame->{{True, True}, {True, True}},
+     FrameLabel->{{None, None}, {None, None}},
+     FrameStyle->Automatic,
+     FrameTicks->FrontEndValueCache[{{Automatic, Automatic}, {
+         Charting`DateTicksFunction[
+         Automatic, DateTicksFormat -> {Automatic}], 
+         Charting`DateTicksFunction[
+         Automatic, DateTicksFormat -> {Automatic}, "TickLabels" -> 
+          None]}}, {{Automatic, Automatic}, {{{3.6290592*^9, 
+           FormBox[
+            StyleBox["\"2015\"", 
+             Directive[], {}, StripOnInput -> False], TraditionalForm], {
+           0.013888888888888888`, 0.}, 
+           Directive[]}, {3.6605952*^9, 
+           FormBox[
+            StyleBox["\"2016\"", 
+             Directive[], {}, StripOnInput -> False], TraditionalForm], {
+           0.013888888888888888`, 0.}, 
+           Directive[]}, {3.6922176*^9, 
+           FormBox[
+            StyleBox["\"2017\"", 
+             Directive[], {}, StripOnInput -> False], TraditionalForm], {
+           0.013888888888888888`, 0.}, 
+           Directive[]}, {3.7237536*^9, 
+           FormBox[
+            StyleBox["\"2018\"", 
+             Directive[], {}, StripOnInput -> False], TraditionalForm], {
+           0.013888888888888888`, 0.}, 
+           Directive[]}, {3.7552896*^9, 
+           FormBox[
+            StyleBox["\"2019\"", 
+             Directive[], {}, StripOnInput -> False], TraditionalForm], {
+           0.013888888888888888`, 0.}, 
+           Directive[]}, {3.7868256*^9, 
+           FormBox[
+            StyleBox["\"2020\"", 
+             Directive[], {}, StripOnInput -> False], TraditionalForm], {
+           0.013888888888888888`, 0.}, 
+           Directive[]}, {3.818448*^9, 
+           FormBox[
+            StyleBox["\"2021\"", 
+             Directive[], {}, StripOnInput -> False], TraditionalForm], {
+           0.013888888888888888`, 0.}, 
+           Directive[]}, {3.6290592*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6341568*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6394272*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6446976*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6500544*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6553248*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6605952*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6605952*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6657792*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6710496*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.67632*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6816768*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6869472*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6922176*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6922176*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6973152*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7025856*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.707856*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7132128*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7184832*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7237536*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7237536*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7288512*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7341216*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.739392*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7447488*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7500192*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7552896*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7552896*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7603872*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7656576*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.770928*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7762848*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7815552*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7868256*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7868256*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7920096*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.79728*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.8025504*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.8079072*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.8131776*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.818448*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}}, {{3.6290592*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.013888888888888888`, 0.}, 
+           Directive[]}, {3.6605952*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.013888888888888888`, 0.}, 
+           Directive[]}, {3.6922176*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.013888888888888888`, 0.}, 
+           Directive[]}, {3.7237536*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.013888888888888888`, 0.}, 
+           Directive[]}, {3.7552896*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.013888888888888888`, 0.}, 
+           Directive[]}, {3.7868256*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.013888888888888888`, 0.}, 
+           Directive[]}, {3.818448*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.013888888888888888`, 0.}, 
+           Directive[]}, {3.6290592*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6341568*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6394272*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6446976*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6500544*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6553248*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6605952*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6605952*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6657792*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6710496*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.67632*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6816768*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6869472*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6922176*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6922176*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.6973152*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7025856*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.707856*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7132128*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7184832*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7237536*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7237536*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7288512*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7341216*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.739392*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7447488*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7500192*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7552896*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7552896*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7603872*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7656576*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.770928*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7762848*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7815552*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7868256*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7868256*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.7920096*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.79728*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.8025504*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.8079072*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.8131776*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}, {3.818448*^9, 
+           FormBox[
+            TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+           0.009722222222222222, 0.}, 
+           Directive[]}}}}],
+     GridLines->FrontEndValueCache[{Charting`ScaledTickValues[
+         (Charting`convertGridLines[
+          ((Transpose[{#, 
+            Table[
+             Directive[
+              GrayLevel[0.4, 0.5], 
+              AbsoluteThickness[1], 
+              AbsoluteDashing[{1, 2}]], {
+              Length[#]}]}]& )[
+           Part[
+            Select[
+             Charting`DateTicksFunction[
+             Automatic, DateTicksFormat -> {Automatic}][
+              SlotSequence[1]], And[
+              FreeQ[#, 
+               Alternatives["", 
+                Spacer[{0, 0}]]], Head[#] === List, Length[#] > 0]& ], All, 
+            1]]& )[
+           SlotSequence[1]], {{3.6309456000000005`*^9, 
+          3.7871856000000005`*^9}}, Automatic]& )[
+          SlotSequence[1]], {Identity, Identity}]& , 
+        Automatic}, {{{3.6290592*^9, 
+          Directive[
+           GrayLevel[0.4], 
+           Opacity[0.5], 
+           AbsoluteThickness[1.], 
+           AbsoluteDashing[{1., 2.}]]}, {3.6605952*^9, 
+          Directive[
+           GrayLevel[0.4], 
+           Opacity[0.5], 
+           AbsoluteThickness[1.], 
+           AbsoluteDashing[{1., 2.}]]}, {3.6922176*^9, 
+          Directive[
+           GrayLevel[0.4], 
+           Opacity[0.5], 
+           AbsoluteThickness[1.], 
+           AbsoluteDashing[{1., 2.}]]}, {3.7237536*^9, 
+          Directive[
+           GrayLevel[0.4], 
+           Opacity[0.5], 
+           AbsoluteThickness[1.], 
+           AbsoluteDashing[{1., 2.}]]}, {3.7552896*^9, 
+          Directive[
+           GrayLevel[0.4], 
+           Opacity[0.5], 
+           AbsoluteThickness[1.], 
+           AbsoluteDashing[{1., 2.}]]}, {3.7868256*^9, 
+          Directive[
+           GrayLevel[0.4], 
+           Opacity[0.5], 
+           AbsoluteThickness[1.], 
+           AbsoluteDashing[{1., 2.}]]}, {3.818448*^9, 
+          Directive[
+           GrayLevel[0.4], 
+           Opacity[0.5], 
+           AbsoluteThickness[1.], 
+           AbsoluteDashing[{1., 2.}]]}}, Automatic}],
+     GridLinesStyle->Directive[
+       GrayLevel[0.4, 0.5], 
+       AbsoluteThickness[1], 
+       AbsoluteDashing[{1, 2}]],
+     ImagePadding->{{47.00000000000091, 11.304849884525652`}, {17., 
+      20.000000000000057`}},
+     Method->{
+      "NoShowPlotTheme" -> "Detailed", "OptimizePlotMarkers" -> True, 
+       "OptimizePlotMarkers" -> True, 
+       "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+           Identity[
+            Part[#, 1]], 
+           Identity[
+            Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+           Identity[
+            Part[#, 1]], 
+           Identity[
+            Part[#, 2]]}& )}},
+     PlotLabel->FormBox["\"CARNVIAL CORP:TotalExpenses\"", TraditionalForm],
+     PlotRange->{{3.6340704*^9, 3.7840608*^9}, {1.2766333333333334`*^10, 
+      1.7548*^10}},
+     PlotRangeClipping->True,
+     PlotRangePadding->{{
+        Scaled[0.02], 
+        Scaled[0.02]}, {
+        Scaled[0.05], 
+        Scaled[0.05]}},
+     Ticks->{{}, Automatic}], {188.61274588195803, -117.07603872425801}, 
+    ImageScaled[{0.5, 0.5}], {359.2623731084915, 223.0019785223962}], {}},
+  ImageSize->{
+    UpTo[360], 
+    UpTo[223]},
+  PlotRange->{{0, 377.22549176391607`}, {-234.15207744851602`, 0}},
+  PlotRangePadding->{6, 5}]], "Output",
+ CellChangeTimes->{{3.8027345874362288`*^9, 3.80273459619774*^9}, 
+   3.8029836446205053`*^9},
+ CellLabel->"Out[3]=",ImageCache->GraphicsData["CompressedBitmap", "\<\
+eJztnQe4XcV17491iwpgHCB26sOJvySOE+elOMYObnlx7GcnTl7Ke3Fe8kwA
+WzRjDBIdAaJ3iSYEEtWI3lRAEggVJIFokhAS6khICCQh1Hvbb36z13/OnH33
+qfdK94K1v++ce+7s2TNrrVlrzZo1a9b+wbF9T/zJqcf2Pen4Yz/73TOO/fmJ
+Jx3f57PfOe0MV9T0iUKh27RC4RPjP1vgd1Io6Kt4vcJXXHKg4CNesMr/aU42
+bdqUvPPOO8maNWuSvXv3HuaLm5IdO3Yky5YtSzZs2FD4nlXds2dP8t577yXv
+vvtusm3btmMqt7Bu3TpfvHbt2nItHGbF69ev91VXrVpFle9VarhN8dEpPvOt
+W7o48cQTk969exe6++/WZODAgUl8rVy5Mrn00kub/O2m5JJLLvEQ0UCrNTNm
+zBjuJvfdd1+hxcocJsn111+fnHDCCYVu0bMzZ870NY6qEQQHdDJq1KjklFNO
+UTMnn3xy8uSTT/oGulszP/3pTz0IjpABhDvuuMOXDR8+vPA1Kxs5cqQvK3bX
+kixevDiLbaFedF999dXkrLPO8k8Jzj59+iRTp04tQbdt/60l/TeAbrOVvf/+
++8k111xTAgIgvfLKK3VRvM2gt8RU8JfDotCzTup9NWW9BQZF//79AyFa/ffB
+JVDAuKeddpqvc8455yRDhgzxf/n/4osvTnbv3q3xeOaZZ3zxPffcY8TomXz4
+4YfJGWec4ct//vOfJ4MHD04uv/xy/z8EnT9/fuErZUEpJchTTz3l7ztW7pbc
+eOON7hH30xe9/PLLYUxOOukkX+a6DmzxxBNP+LLbbrstsODrr7+eYYGDkkWL
+FtWKdaE82q3JCy+8oLaTCy64ILnrrruSK6+8UuwA59pV+Muy4LQGcBrEvskG
+Yfv27R4Kyk899dRk0KBByWWXXeb/p/6SJUsqDMIn6+UHX8+h07MBopZwZ3My
+e/bsQMcpU6a0+DoHe9HRhZRy2/F7smXLFl/GX3iecicjlRj0gQce8GXnnntu
+snHjRv84wj9s2DBfft555xltykDTGqBxk0PA78UXX+xmT6F6KEIMHAkETB6b
+vvTSS2IZY9MWD8xVV13lyy+66CKaKPieuxkGNRAgl1ebrAPAhisov/vuu+mw
+INiffvrpwCVuVv1ybTA1t4MUTVYVbSkl4bSrWhCysLNj66Mqjcxh9fJJGPwM
+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
+Pj7FZMxvoO0gTU5KMF3itn98+ejktbnpLDGvgbZTvd+ajJyyqEQhwIOjX1xc
+rcmyelAHaghbY4M0ux1AeCQ1ikcdKijEWrlKh7bYkrQd2tApMXzb0tM70XGQ
+DuAq6TV0Vdb9TdgMZwWp8WYDoyOPMq71y+8u3VM47Ybn/U41NWY10LY82Ig7
+R6HitjFEFCz7RgNtp2uCVn/QoYSrLnk6ef7VpXU2mTfU/2T1sDGx32LoHxj7
+ltfR1OjeQUOdB4NODr+1ZI13fMYwEJnEScBEs2FHsdthdoMT6QQTxp2yv0q0
+BjVea2DYFEdKG9kwGCJDFBv/agNtyycIUYhQKpmTr37Wyyw1XmmgbYVos9bj
+XEtWQYqVX67Sdllt9kMbRzLFxFv8WMVT3ni36O7uACX271aP44alnN3sY624
+RqSO5g5gJ8VyEghly49AOkipylMbGJbfsBvEoBIYGLfN8andZhlOaaBtxcGi
+dbNigMkn2ZvcQNva5MQJeb5bTcRtYygr0PmF+trOG2ydOsLeySp4TBSdT807
+ddQ+5XWM1WO7+pyBo0p6xgP7/ppU1v+jXT377yPtBnM+x6jirpimdXxoQgNj
+5f0iTjJJjRDPNMTLvrlodbUmm8MdNYQBHjeECE6bveJZbsfiHCckxl3HS0m3
+bNlSb0Liz1m3HIUxaQ/217MvL3m+PPz15itmPZ3NV8zb6O192PsvX3ENzFlk
+NUHAcavsYuWx8fNCK/8759l8Nq0v4XFP/27c3uaxJosQXrJ+/fr5/9mdmjlz
+ZnD2dLlMxwKMkPKTMhYxJ89kJv1rB5CvbUZkXAJ6kSNv9cLnxMVfOfwJRXD1
+Cl0nI/Lv2w0sLE6zZs06AqGpMSangRpiuNjdEILLli0Tm+AWl9fJ0VHOqM7I
+nPwHdoNIT9bFMQE4sM8alxqjGyFA6igiZGbp0qWB87U3wttHOyO9sgLVWWj1
+v3Nqm0Xcejvl+Ex9KOtIBXq2FL39mINZJxIJbtdJNuFGXLfOazyd00AN/IzO
+f+ONN7yeDC/sbvbTinTX3LlzBXHXSt0slsQSvf3JmW28NjpMn3dAtXb1mPZy
+kKeUYqAQRFQlgkAYml5izMxdVIddOO+zxBCkHkiDXCP3wVi/KKbGP7SLdOpF
+JOgdpZJDeNgZTIKh0qmJohUGnj0YhGd40vRlI3Oeqy36USGwhL5TxIYqOWIR
+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
+bzTy8EJMi4wKToINm7f/Y85zlRNaaiGLiWpneMN67qyzzvLOQ2ockf9458Z3
++u+bjCS4UONFIcFKbkn8D+VJkheuqRTqMAmOTmIAYRIYxEHUBTJe+u+bjT8f
+fq7UD3D7kzMLFTDeJ5GZ8t7nvf1pZOSG/7ucBvZRZGat2iZ+F1p2z483hqq9
+74Yn8tVOR0dw1gq/bEdmv9iPzvbdO+9vKEZ/54O9DwM8/fcga5+kP7G2Ij5h
+/abt3895bn8lvfTft1kv6aZgUYr6p6rje9Xg2w/hl4P9zxb/HvkYxMFPzChU
+gG8fhVwOthvsHmRfymfhlr7Gd3Ia6IiQy7ykTXlyoddBEl1xQUauLSDb1/hr
+vjsqKrNWof2MtYrQnpoR2qXvbyi+AzBfaMtuxA6xdnnF7vEZaVu3afvf5jxX
+bW93qDXJcZKY+4hc2bFr97cbaPJO/7OlTSafQY/PKDTeXj5Lxhk1/7q+tmsd
+TCWowhFJWF05Tvt6eKL2Ua0Vht+yUSICtIShLh/N7uI3Gujaf99j7RJVGDMU
+KQnXbdz2rQZG615rkpC4EoYa4hnqmw00mYZ3t/g0QXGTtz42vdB4e/aGq0yA
+U+xa/lqVtutSWIppho30Km91SoY4deBXkI2km8vrVLmwiCQ9NUqUDd+8vWJ9
+MYa7Tr4ZZu0SSBS/MpCo0LUbtx2d81y1QXnAmmRzNB5kYtB37Nz9Vw00+aA1
+mU3hTNS+G/uvNtxkyjq3ZF6ORvBfySh2vC7Se9B35DCRJY/1Nf4iPNHxuuj3
+japktIuTrxMp7ia8LzXQtf9+xNpFF8VRAbwnfM+evV/Oea7aaD3qf7a0Cd16
+YuKCQrX2iqEsAowxt/Cn4ICat/RDH8FdU7TgY9YQMfyWRjFM35u37vxSznMd
+wDNfMCKQeC2zpVr4swYGq9Z+/8j6fSAT5Pb8q0uj1wTXySRPGAkJRTMB8B+U
+0PJVG/+8PhL67yetSRJQ/iQKiiRro5OzP2ugyacM9eyq4+5RbxYaaW+4tWdn
+YcLHmR+FP62vvVpHT2/+3Lp9V8k7g0mP66S8+ObPjmec/25dk00yVgQEajtF
+8EcNdO2/RxoV22iDCfMLf9LAqIw0OL1euL9UL8xd+uEXyzdZ9Y3XJe2jLuKl
+P8bZpq07fKazRl5hraU1DjDK8BK79XRIobWf00b676dtbLJKauBDrxX+uDwh
+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\
+\>", "ImageResolution" -> \
+144.],ExpressionUUID->"5349e4df-ed7f-4653-a80f-99a2196f8bac"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Set", "write", 
+   "\"Tag \\!\\(\\*RowBox[{\\\"Slot\\\"}]\\) in \
+\\!\\(\\*RowBox[{\\\"#plotCarnivalasset\\\"}]\\) is Protected.\"", 2, 4, 3, 
+   27673619453043448966, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.802734587752249*^9, 3.802734596520226*^9}, 
+   3.802983645093005*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"d2287738-cae6-4222-ae9a-4b530a4ebff9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FinancialData", "[", 
+  RowBox[{"\"\<CARNIVAL CORP\>\"", ",", "\"\<Revenue\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"2000", ",", "1", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2000", ",", "4", ",", "1"}], "}"}]}], "}"}]}], "]"}]], "Input",\
+
+ CellChangeTimes->{{3.802983786703745*^9, 3.802983803013914*^9}, {
+  3.80298428059055*^9, 3.8029842911794*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"994d8f05-3f24-4614-b277-4e8c362d13aa"],
+
+Cell[BoxData[
+ RowBox[{"FinancialData", "[", 
+  RowBox[{"\<\"CARNIVAL CORP\"\>", ",", "\<\"Revenue\"\>", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"2000", ",", "1", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2000", ",", "4", ",", "1"}], "}"}]}], "}"}]}], "]"}]], "Output",\
+
+ CellChangeTimes->{3.802983814649329*^9, 3.802984292202146*^9},
+ CellLabel->"Out[7]=",ExpressionUUID->"13a35821-6a74-4416-82de-378bab9c7430"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowToolbars->"EditBar",
+WindowSize->{1436, 764},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+TaggingRules->{"TryRealOnly" -> False},
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (March 18, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"2ce03de0-89dc-4480-acca-fb706e39bcbd"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 172, 3, 98, "Title",ExpressionUUID->"9d077040-8f7c-4a47-be32-7a126669b326"],
+Cell[755, 27, 195, 3, 53, "Subtitle",ExpressionUUID->"51129d85-cfb5-432e-9a4a-ce36ed1d5a72"],
+Cell[CellGroupData[{
+Cell[975, 34, 156, 3, 67, "Section",ExpressionUUID->"f78a1339-3d38-4e60-bacc-41683d6a25ae"],
+Cell[CellGroupData[{
+Cell[1156, 41, 527, 10, 30, "Input",ExpressionUUID->"85eb023c-1990-4218-b455-20c0cc6485a8"],
+Cell[1686, 53, 86605, 1676, 595, "Output",ExpressionUUID->"a79f1feb-6a96-4db7-a4fe-980e99605671"]
+}, Open  ]],
+Cell[88306, 1732, 173, 2, 30, "Input",ExpressionUUID->"3af2a142-0c83-463c-a55d-d4be801fd28b"],
+Cell[88482, 1736, 500, 10, 30, "Input",ExpressionUUID->"efd899be-0d92-4945-893a-231b89f618b3"],
+Cell[88985, 1748, 493, 10, 30, "Input",ExpressionUUID->"1afb5657-7673-4532-a4d3-decd52b501db"],
+Cell[89481, 1760, 399, 9, 30, "Input",ExpressionUUID->"7e8b7e49-b562-4165-9444-6a5620cbdac6"],
+Cell[89883, 1771, 418, 9, 30, "Input",ExpressionUUID->"364291ef-7e7c-4932-8e10-2717a536e415"],
+Cell[90304, 1782, 405, 9, 30, "Input",ExpressionUUID->"49d81aac-ddfa-4a06-b997-59f9bc2102f2"],
+Cell[90712, 1793, 449, 9, 30, "Input",ExpressionUUID->"ab062f8d-32cc-4d7c-9336-15d69c5b37d8"],
+Cell[CellGroupData[{
+Cell[91186, 1806, 3126, 71, 157, "Input",ExpressionUUID->"68fa0d23-ae11-4f60-b43d-278d99a438dc"],
+Cell[94315, 1879, 21513, 525, 240, "Output",ExpressionUUID->"dc41c032-a680-4376-82f7-ee007886c6ed"],
+Cell[115831, 2406, 446, 11, 24, "Message",ExpressionUUID->"c83b40b7-65b0-4820-b6f5-3e1ce845b2b8"],
+Cell[116280, 2419, 44087, 895, 240, 21389, 522, "CachedBoxData", "BoxData", "Output",ExpressionUUID->"5349e4df-ed7f-4653-a80f-99a2196f8bac"],
+Cell[160370, 3316, 446, 11, 24, "Message",ExpressionUUID->"d2287738-cae6-4222-ae9a-4b530a4ebff9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[160853, 3332, 506, 12, 30, "Input",ExpressionUUID->"994d8f05-3f24-4614-b277-4e8c362d13aa"],
+Cell[161362, 3346, 459, 11, 34, "Output",ExpressionUUID->"13a35821-6a74-4416-82de-378bab9c7430"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
